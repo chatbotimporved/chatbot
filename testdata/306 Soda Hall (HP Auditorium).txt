@@ -1,0 +1,32 @@
+EECS Department Colloquium Series
+
+The Distributed Cameras
+
+Wednesday, November 6, 2013
+306 Soda Hall (HP Auditorium)
+4:00 - 5:00 pm
+3:30 - Refreshments will be served
+
+Noah Snavely
+Professor, Graphics and Vision Group, Computer Science Department,
+Cornell University
+
+ABSTRACT:
+We live in a world of ubiquitous imagery, in which the number of
+images at our fingertips is growing at a seemingly exponential rate.
+These images come from a wide variety of sources, including mapping
+sites, webcams, and millions of photographers around the world
+uploading billions and billions of images to social media and
+photo-sharing websites, such as Facebook. Taken together, these
+sources of imagery can be thought of as constituting a distributed
+camera capturing the entire world at unprecedented scale, and
+continually documenting its cities, buildings, people, and events.
+This talk will focus on how we might use this distributed camera as a
+fundamental new tool for science, engineering, and environmental
+monitoring, and how a key problem is "calibration" -- determining the
+precise camera geometry of each photo, in a world coordinates system,
+in an efficient, automatic way. I will describe our work on building a
+massive geometric database of images, and on using this database to
+automatically calibrate new photos. I will also talk about how we are
+beginning to use these precisely calibrated, crowdsourced photos for
+new computer vision applications.

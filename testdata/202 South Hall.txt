@@ -1,0 +1,9 @@
+Don't miss next Tuesday’s Special Lecture at the UC Berkeley School of Information:
+
+War Stories from Tech Policy: Backdoor mandates, the cryptapocalypse, and license plates for drones
+With Joseph Lorenzo Hall, Chief Technologist, The Center for Democracy & Technology
+
+Tuesday, November 12, 2013, 11:40 am - 1:00 pm
+202 South Hall
+
+Increasingly, policy-making in Washington, D.C., involves high technology, especially computing devices and networks. As a staff technologist, I work on issues of technology policy and digital rights at a non-profit think tank and advocacy organization in D.C., The Center for Democracy & Technology. I’ll explain what a staff technologist does through three examples from my work this past year. First, I’ll describe a technical report I coordinated that was authored by twenty of the world’s top computer security and cryptography experts. The report argued that an FBI-lead effort to mandate backdoors in communications software — “CALEA II” — was unwise and would be ineffective. Second, much of encryption used online was cast in doubt this September when documents leaked by Edward Snowden exposed a systematic effort by the U.S. National Security Agency to subvert encryption software, hardware, standards, and implementations. I’ll describe how we’ve engaged with standard setting entities, executive branch oversight mechanisms, and Congress to advocate for security and privacy through strong encryption. Finally, drones hold great promise for applications that require cheap data collection from an aerial platform; but drones also can be covert surveillance platforms. I’ll describe our efforts to develop a policy proposal for radio-frequency “license plates” for drones that ground-based observers, other drones, and manned aircraft could use to monitor the position and activities of drones in the sky around them..

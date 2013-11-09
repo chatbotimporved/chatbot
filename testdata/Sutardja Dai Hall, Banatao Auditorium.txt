@@ -1,0 +1,19 @@
+November 7 Thursday
+1-2 pm
+Sutardja Dai Hall, Banatao Auditorium
+
+Speaker: Christopher Soghoian, American Civil Liberties Union
+
+Title: Backdoors, Government Hacking and the Next Crypto Wars
+
+The FBI claims it is going dark. Encryption technologies have finally been deployed by software companies, and critically, enabled by default, such that emails are flowing over HTTPS, and disk encryption is now frequently used. Friendly telcos, who were once a one-stop-shop for surveillance can no longer meet the needs of our government. What can the FBI and other government agencies do to preserve their spying capabilities?
+
+Part of the answer is backdoors: The FBI is rallying political support in Washington, DC for legislation that will give it the ability to fine Internet companies unwilling to build surveillance backdoors into their products. Even though interception systems prove to be irresistible targets for nation states, the FBI and its allies want to make our networks less secure, not more.
+
+The other solution embraced by the FBI is hacking, by the government, against its citizens. A team of FBI agents and contractors, based in Quantico, Virginia have developed (and acquired) the capabilities to hack into systems, deliver malware capable of surreptitiously enabling a computer's webcam, collecting real-time location data, as well as capturing emails, web browsing records and other documents.
+
+While politicians are clearly scared about hacks from China, our own law enforcement agencies are clearly in the hacking business. What does this mean for the current, heated debate about cybersecurity and our ability to communicate security?
+
+Dubbed the “Ralph Nader for the Internet Age” by Wired and "the most prominent of a new breed of activist technology researchers” by the Economist, Christopher Soghoian works at the intersection of technology, law, and policy. A leading expert on privacy, surveillance, and information security, Soghoian worked for the U.S. Federal Trade Commission as the first-ever in-house technical advisor to the Division of Privacy and Identity Protection. He is currently the Principal Technologist with the Speech, Privacy, and Technology Project at the American Civil Liberties Union.
+
+A 2012 TEDGlobal Fellow, Soghoian has been named a top innovator under 35 by the MIT Technology Review, and was an Open Society Foundations Fellow. Soghoian completed his Ph.D. at Indiana University in 2012, which focused on the role that Internet and telephone companies play in enabling government surveillance of their customers.
