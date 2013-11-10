@@ -9,9 +9,11 @@ Features that we think are important:
 -	Most words won’t be in the dictionary
 -	Most words are names NP
 -	The locations often include hall, school or house
-
 '''
-'''#what do we mean by history'''
+
+
+#calls all the passed in fns on a given word
+def 
 
 #gets the word
 def word(sent, i, history):
@@ -118,7 +120,7 @@ def is_capitalized(sent, i, history):
 	return {'caps': word[0].isupper()}
 
 #return if the word is in all caps 
-def is_capitalized(sent, i, history):
+def is_all_capitalized(sent, i, history):
 	word, pos = sent[i]
 	result = True
 	for char in word:
