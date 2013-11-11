@@ -6,9 +6,9 @@ Sunday NNP O
 30 CD O
 AM-7 -NONE- O
 PM NNP O
-Vacaville NNP O
-Ice NNP O
-Sports NNP O
+Vacaville NNP B-LOC
+Ice NNP I-LOC
+Sports NNP I-LOC
 ( NNP O
 leave VBP O
 from IN O

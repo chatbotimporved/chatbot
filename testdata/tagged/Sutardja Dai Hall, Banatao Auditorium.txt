@@ -6,12 +6,12 @@ Thursday NNP O
 2 CD O
 pm NN O
 
-Sutardja NNP O
-Dai NNP O
-Hall NNP O
-, , O
-Banatao NNP O
-Auditorium NNP O
+Sutardja NNP B-LOC
+Dai NNP I-LOC
+Hall NNP I-LOC
+, , I-LOC
+Banatao NNP I-LOC
+Auditorium NNP I-LOC
 
 Speaker NN O
 : : O
@@ -431,8 +431,8 @@ Ph NNP O
 . . O
 D. NNP O
 at IN O
-Indiana NNP O
-University NNP O
+Indiana NNP B-LOC
+University NNP I-LOC
 in IN O
 2012 CD O
 , , O

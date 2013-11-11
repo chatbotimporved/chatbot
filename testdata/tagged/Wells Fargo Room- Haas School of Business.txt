@@ -31,13 +31,13 @@ pm NN O
 
 Location NN O
 : : O
-Wells NNS O
-Fargo NNP O
-Room NNP O
-Haas NNP O
-School NNP O
-of IN O
-Business NNP O
+Wells NNS B-LOC
+Fargo NNP I-LOC
+Room NNP I-LOC
+Haas NNP I-LOC
+School NNP I-LOC
+of IN I-LOC
+Business NNP I-LOC
 
 Registration NN O
 Required VBN O

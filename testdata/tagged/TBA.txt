@@ -6,7 +6,7 @@ Tuesday NNP O
 PM NNP O
 Location NNP O
 : : O
-TBA NNP O
+TBA NNP B-LOC
 
 To TO O
 get VB O
