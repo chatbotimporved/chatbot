@@ -1,0 +1,286 @@
+EECS NNS O
+Department NNP O
+Colloquium NNP O
+Series NNP O
+
+The DT O
+Distributed NNP O
+Cameras NNP O
+
+Wednesday NNP O
+, , O
+November NNP O
+6 CD O
+, , O
+2013 CD O
+
+306 CD O
+Soda NNP O
+Hall NNP O
+( NNP O
+HP NNP O
+Auditorium NNP O
+) NNP O
+
+4 LS O
+: : O
+00 CD O
+5 CD O
+: : O
+00 CD O
+pm NN O
+
+3 LS O
+: : O
+30 CD O
+Refreshments NNS O
+will MD O
+be VB O
+served VBN O
+
+Noah NNP O
+Snavely NNP O
+
+Professor NNP O
+, , O
+Graphics NNP O
+and CC O
+Vision NNP O
+Group NNP O
+, , O
+Computer NNP O
+Science NNP O
+Department NNP O
+, , O
+
+Cornell NNP O
+University NNP O
+
+ABSTRACT NN O
+: : O
+
+We PRP O
+live VBP O
+in IN O
+a DT O
+world NN O
+of IN O
+ubiquitous JJ O
+imagery NN O
+, , O
+in IN O
+which WDT O
+the DT O
+number NN O
+of IN O
+
+images NNS O
+at IN O
+our PRP$ O
+fingertips NNS O
+is VBZ O
+growing VBG O
+at IN O
+a DT O
+seemingly RB O
+exponential JJ O
+rate NN O
+. . O
+
+These DT O
+images NNS O
+come VBP O
+from IN O
+a DT O
+wide JJ O
+variety NN O
+of IN O
+sources NNS O
+, , O
+including VBG O
+mapping NN O
+
+sites NNS O
+, , O
+webcams NNS O
+, , O
+and CC O
+millions NNS O
+of IN O
+photographers NNS O
+around IN O
+the DT O
+world NN O
+
+uploading VBG O
+billions NNS O
+and CC O
+billions NNS O
+of IN O
+images NNS O
+to TO O
+social JJ O
+media NNS O
+and CC O
+
+photo-sharing JJ O
+websites NNS O
+, , O
+such JJ O
+as IN O
+Facebook NNP O
+. . O
+Taken NNP O
+together RB O
+, , O
+these DT O
+
+sources NNS O
+of IN O
+imagery NN O
+can MD O
+be VB O
+thought VBN O
+of IN O
+as RB O
+constituting VBG O
+a DT O
+distributed JJ O
+
+camera NN O
+capturing VBG O
+the DT O
+entire JJ O
+world NN O
+at IN O
+unprecedented VBN O
+scale NN O
+, , O
+and CC O
+
+continually RB O
+documenting VBG O
+its PRP$ O
+cities NNS O
+, , O
+buildings NNS O
+, , O
+people NNS O
+, , O
+and CC O
+events NNS O
+. . O
+
+This DT O
+talk NN O
+will MD O
+focus VB O
+on IN O
+how WRB O
+we PRP O
+might MD O
+use VB O
+this DT O
+distributed VBN O
+camera NN O
+as IN O
+a DT O
+
+fundamental JJ O
+new JJ O
+tool NN O
+for IN O
+science NN O
+, , O
+engineering NN O
+, , O
+and CC O
+environmental JJ O
+
+monitoring VBG O
+, , O
+and CC O
+how WRB O
+a DT O
+key JJ O
+problem NN O
+is VBZ O
+" : O
+calibration NN O
+" : O
+determining VBG O
+the DT O
+
+precise NN O
+camera NN O
+geometry NN O
+of IN O
+each DT O
+photo NN O
+, , O
+in IN O
+a DT O
+world NN O
+coordinates VBZ O
+system NN O
+, , O
+
+in IN O
+an DT O
+efficient NN O
+, , O
+automatic JJ O
+way NN O
+. . O
+I PRP O
+will MD O
+describe VB O
+our PRP$ O
+work NN O
+on IN O
+building NN O
+a DT O
+
+massive JJ O
+geometric JJ O
+database NN O
+of IN O
+images NNS O
+, , O
+and CC O
+on IN O
+using VBG O
+this DT O
+database NN O
+to TO O
+
+automatically RB O
+calibrate VBP O
+new JJ O
+photos NNS O
+. . O
+I PRP O
+will MD O
+also RB O
+talk VB O
+about IN O
+how WRB O
+we PRP O
+are VBP O
+
+beginning NN O
+to TO O
+use VB O
+these DT O
+precisely RB O
+calibrated VBN O
+, , O
+crowdsourced VBN O
+photos NNS O
+for IN O
+
+new JJ O
+computer NN O
+vision NN O
+applications NNS O
+. . O
