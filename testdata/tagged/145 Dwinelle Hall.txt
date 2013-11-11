@@ -22,7 +22,8 @@ inaugural JJ O
 TEDYouth NNP O
 Viewing NNP O
 Party NNP O
-The NNP O
+
+The DT O
 viewing NN O
 party NN O
 is VBZ O

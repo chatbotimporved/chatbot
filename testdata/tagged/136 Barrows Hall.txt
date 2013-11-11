@@ -29,7 +29,8 @@ Public NNP O
 Relations NNP O
 ' POS O
 workshop NN O
-We'll NN O
+
+We'll JJ O
 teach NN O
 you PRP O
 the DT O

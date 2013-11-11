@@ -245,7 +245,8 @@ def tokenize_sentences(sentences):
     return results
 
 def split_raw_to_sentences(raw):
-    sentences = raw.split('\n')
+    r = re.compile("(\n|\!|\?)")
+    sentences = r.split(raw)
 
     return sentences
 

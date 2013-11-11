@@ -73,7 +73,9 @@ rights NNS O
 make VBP O
 this DT O
 possible JJ O
+
 ? . O
+
 What WP O
 is VBZ O
 a DT O
@@ -84,7 +86,9 @@ copyright NN O
 , , O
 a DT O
 trademark NN O
+
 ? . O
+
 What WP O
 intellectual JJ O
 property NN O
@@ -94,8 +98,10 @@ the DT O
 new JJ O
 venture NN O
 employ NN O
+
 ? . O
-Attend NNP O
+
+Attend NN O
 this DT O
 session NN O
 to TO O

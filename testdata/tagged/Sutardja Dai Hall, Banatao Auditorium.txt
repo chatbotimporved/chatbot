@@ -110,6 +110,7 @@ preserve VB O
 their PRP$ O
 spying NN O
 capabilities NNS O
+
 ? . O
 
 Part NN O
@@ -293,6 +294,7 @@ ability NN O
 to TO O
 communicate VB O
 security NN O
+
 ? . O
 
 Dubbed NNP O

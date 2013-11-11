@@ -72,7 +72,8 @@ marketers NNS O
 , , O
 and CC O
 more JJR O
-Information NNP O
+
+Information NN O
 will MD O
 be VB O
 provided VBN O
