@@ -1,20 +1,5 @@
 from nltk.corpus import wordnet
 
-'''
-Features that we think are important:
--	Words have capitals except for stopwords
--	There are numbers included
--	Most words are nouns
--	There are brackets ()
--	Most words won’t be in the dictionary
--	Most words are names NP
--	The locations often include hall, school or house
-'''
-
-
-#calls all the passed in fns on a given word
-def 
-
 #gets the word
 def word(sent, i, history):
     word, pos = sent[i]
@@ -130,10 +115,10 @@ def is_all_capitalized(sent, i, history):
 #a helper fn that checks if a word is a number 
 def number(s):
 	try:
-    	float(s)
-    	return True
+    		float(s)
+    		return True
 	except ValueError:
-       return False
+       		return False
 
 #return if the word is a number
 def is_numeric(sent, i, history):
