@@ -10,9 +10,9 @@ Saturday NNP O
 PM NNP O
 Location NNP O
 : : O
-145 CD O
-Dwinelle NNP O
-Hall NNP O
+145 CD B-Loc
+Dwinelle NNP I-Loc
+Hall NNP I-Loc
 
 TEDxBerkeley NNP O
 is VBZ O

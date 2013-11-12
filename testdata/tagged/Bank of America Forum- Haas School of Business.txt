@@ -28,14 +28,14 @@ pm NN O
 
 Location NN O
 : : O
-Bank NNP O
-of IN O
-America NNP O
-Forum NNP O
-Haas NNP O
-School NNP O
-of IN O
-Business NNP O
+Bank NNP B-Loc
+of IN I-Loc
+America NNP I-Loc
+Forum NNP I-Loc
+Haas NNP I-Loc
+School NNP I-Loc
+of IN I-Loc
+Business NNP I-Loc
 
 Registration NN O
 Required VBN O

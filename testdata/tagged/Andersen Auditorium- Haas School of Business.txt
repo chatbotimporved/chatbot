@@ -32,12 +32,12 @@ pm NN O
 
 Location NN O
 : : O
-Andersen NNP O
-Auditorium NNP O
-Haas NNP O
-School NNP O
-of IN O
-Business NNP O
+Andersen NNP B-Loc
+Auditorium NNP I-Loc
+Haas NNP I-Loc
+School NNP I-Loc
+of IN I-Loc
+Business NNP I-Loc
 
 Registration NN O
 Required VBN O

@@ -15,6 +15,10 @@ from nltk.classify import MaxentClassifier
 
 from nltk.corpus import CategorizedPlaintextCorpusReader as CPCR
 
+'''
+The chunk tagger class as it is used in the NLTK book and at:
+http://streamhacker.com/2010/03/15/nltk-classifier-based-chunker-accuracy/
+'''
 class ConsecutiveNPChunkTagger(TaggerI):
 
     def __init__(self, feature_extractor, classifier):
@@ -48,11 +52,15 @@ class ConsecutiveNPChunkTagger(TaggerI):
         classifier = classifier_cls.train(train_set, **kwargs)
         return cls(feature_extractor, classifier)
 
+'''
+The NPChunker as it is used in the NLTK book and at:
+http://streamhacker.com/2010/03/15/nltk-classifier-based-chunker-accuracy/
+'''
 class ConsecutiveNPChunker(ChunkParserI):
     def __init__(self, train_sents, *args, **kwargs):
         tag_sents = [tree2conlltags(sent) for sent in train_sents]
         train_chunks = [[((w,t),c) for (w,t,c) in sent] for sent in tag_sents]
-        self.tagger =ConsecutiveNPChunkTagger.train(train_chunks, *args, **kwargs)
+        self.tagger = ConsecutiveNPChunkTagger.train(train_chunks, *args, **kwargs)
 
     def parse(self, tagged_sent):
         if not tagged_sent: return None
@@ -210,14 +218,33 @@ def extract_categories(filesDir):
 
 def train_chunker(filesDir):
     emails = extract_categories(filesDir)
-    
+
     sentences = split_raw_to_sentences(emails.raw())
 
     tokenized_emails = tokenize_sentences(sentences)
     train_sents = tag_sentences(tokenized_emails)
+
+    split = int(0.9 * len(train_sents))
+    train_sents = train_sents[0:split]
+    # word is the feature
     chunker = ConsecutiveNPChunker(train_sents, word, nltk.NaiveBayesClassifier)
-    #, min_lldelta=0.01, max_iter=10
+
     return chunker
+
+def test_chunker(filesDir, classifier):
+    emails = extract_categories(filesDir)
+    sentences = split_raw_to_sentences(emails.raw())
+
+    tokenized_emails = tokenize_sentences(sentences)
+    test_sents = tag_sentences(tokenized_emails)
+
+    split = int(0.9 * len(test_sents))
+    test_sents = test_sents[split:]
+
+    #print nltk.classify.accuracy(classifier, test_sents)
+
+    #for sent in test_sents:
+    print nltk.NEChunkParser.train(test_sents)
 
 def tag_sentences(sentences):
     tagged_emails = []
@@ -249,13 +276,6 @@ def split_raw_to_sentences(raw):
     sentences = r.split(raw)
 
     return sentences
-
-def test_classifier(filesDir, classifier):
-    products = extract_categories(filesDir)
-    documents = createDocuments(products)
-    test_list = wordList(products, documents)
-
-    print nltk.classify.accuracy(classifier, test_list)
 
 '''
 This method makes sure that our testdata is in the good format.
@@ -305,5 +325,5 @@ def getFilenames(input_directory):
 input_dir = "/Users/dirkdewit/Documents/School/Master HTI/Internationaal Semester/Applied Natural Language Processing/Assignments/Chatbot/chatbot/testdata/"
 output_dir = "/Users/dirkdewit/Documents/School/Master HTI/Internationaal Semester/Applied Natural Language Processing/Assignments/Chatbot/chatbot/testdata/tagged/"
 
-#classifier = train_chunker(output_dir)
-createTaggedFiles(input_dir, output_dir)
+chunker = train_chunker(output_dir)
+test_chunker(input_dir, chunker)

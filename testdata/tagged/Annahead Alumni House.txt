@@ -6,9 +6,9 @@ Monday NNP O
 PM NNP O
 Location NNP O
 : : O
-Annahead NNP O
-Alumni NNP O
-House NNP O
+Annahead NNP B-Loc
+Alumni NNP I-Loc
+House NNP I-Loc
 
 The DT O
 RCSA NNP O

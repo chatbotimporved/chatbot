@@ -14,13 +14,13 @@ November NNP O
 , , O
 2013 CD O
 
-306 CD O
-Soda NNP O
-Hall NNP O
-( NNP O
-HP NNP O
-Auditorium NNP O
-) NNP O
+306 CD B-Loc
+Soda NNP I-Loc
+Hall NNP I-Loc
+( NNP I-Loc
+HP NNP I-Loc
+Auditorium NNP I-Loc
+) NNP I-Loc
 
 4 LS O
 : : O

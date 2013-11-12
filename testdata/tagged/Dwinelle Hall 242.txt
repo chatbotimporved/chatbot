@@ -79,9 +79,9 @@ pm NN O
 
 Location NN O
 : : O
-Dwinelle NNP O
-Hall NNP O
-242 CD O
+Dwinelle NNP B-Loc
+Hall NNP I-Loc
+242 CD I-Loc
 
 All DT O
 are VBP O

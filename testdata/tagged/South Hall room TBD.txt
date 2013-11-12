@@ -100,7 +100,7 @@ am NN O
 
 Where WRB O
 : : O
-South NNP O
-Hall NNP O
-room NN O
-TBD NNP O
+South NNP B-Loc
+Hall NNP I-Loc
+room NN I-Loc
+TBD NNP I-Loc

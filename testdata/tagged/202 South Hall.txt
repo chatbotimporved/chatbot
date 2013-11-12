@@ -62,9 +62,9 @@ am NN O
 00 CD O
 pm NN O
 
-202 CD O
-South NNP O
-Hall NNP O
+202 CD B-Loc
+South NNP I-Loc
+Hall NNP I-Loc
 
 Increasingly RB O
 , , O
