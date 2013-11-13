@@ -81,9 +81,23 @@ Features that we think are important:
 -   The locations often include hall, school or house
 '''
 
+# Combine all the features into one dictionary
+def combine_features(sent, i, history):
+    features = dict(
+    list(word(sent, i, history).items()) +
+    list(pos(sent, i, history).items()) +
+    list(pos_word(sent, i, history).items()) +
+    list(prev_pos(sent, i, history).items()) +
+    list(prev_pos_word(sent, i, history).items()) +
+    list(next_pos(sent, i, history).items()) +
+    list(next_pos_word(sent, i, history).items()) +
+    list(prev_next_pos(sent, i, history).items()) +
+    list(prev_next_pos_word(sent, i, history).items()) +
+    list(is_capitalized(sent, i, history).items()) +
+    list(is_all_capitalized(sent, i, history).items()) +
+    list(is_numeric(sent, i, history).items()))
 
-#calls all the passed in fns on a given word
-
+    return features;
 
 #gets the word
 def word(sent, i, history):
@@ -98,7 +112,7 @@ def pos(sent, i, history):
  #gets the part of speech  and the word
 def pos_word(sent, i, history):
     word, pos = sent[i]
-    return {'pos': pos, 'word': word}
+    return {'pos+word': "%s+%s" % (pos, word)}
 
  #gets the part of speech of the previous word, and the curent words
 def prev_pos(sent, i, history):
@@ -109,7 +123,8 @@ def prev_pos(sent, i, history):
     else:
         prevword, prevpos = sent[i-1]
  
-    return {'pos': pos, 'prevpos': prevpos}
+    return {'pos+prevpos': "%s+%s" % (pos, prevpos)}
+
  
 
  #gets the part of speech of the previous word, the current word, and the word
@@ -121,7 +136,8 @@ def prev_pos_word(sent, i, history):
     else:
         prevword, prevpos = sent[i-1]
  
-    return {'pos': pos, 'prevpos': prevpos, 'word': word}
+    return {'pos+prevpos+word': "%s+%s+%s" % (pos, prevpos, word)}
+
  
  #gets the part of speech of the next word, and the current word
 def next_pos(sent, i, history):
@@ -132,7 +148,8 @@ def next_pos(sent, i, history):
     else:
         nextword, nextpos = sent[i+1]
  
-    return {'pos': pos, 'nextpos': nextpos}
+    return {'pos+nextpos': "%s+%s" % (pos, nextpos)}
+
  
 #get the part of speech of the current and next words and the actual next word
 def next_pos_word(sent, i, history):
@@ -143,7 +160,7 @@ def next_pos_word(sent, i, history):
     else:
         nextword, nextpos = sent[i+1]
  
-    return {'pos': pos, 'nextpos': nextpos, 'word': word}
+    return {'pos+nextpos+word': "%s+%s+%s" % (pos, nextpos, word)}
  
 #get the part of speech of the current, previous and next words
 def prev_next_pos(sent, i, history):
@@ -159,7 +176,7 @@ def prev_next_pos(sent, i, history):
     else:
         nextword, nextpos = sent[i+1]
  
-    return {'pos': pos, 'nextpos': nextpos, 'prevpos': prevpos}
+    return {'pos+nextpos+prevpos': "%s+%s+%s" % (pos, nextpos, prevpos)}
  
 
 #get the part of speech of the current, previous and next words, and the current word
@@ -176,7 +193,7 @@ def prev_next_pos_word(sent, i, history):
     else:
         nextword, nextpos = sent[i+1]
  
-    return {'pos': pos, 'nextpos': nextpos, 'word': word, 'prevpos': prevpos}
+    return {'pos+nextpos+word+prevpos': "%s+%s+%s+%s" % (pos, nextpos, word, prevpos)}
 
 #return if the word is in the english dictionary
 def in_dictionary(sent, i, history):
@@ -212,40 +229,27 @@ def is_numeric(sent, i, history):
 
 ############################## END FEATURES ###############################
 
-def extract_categories(filesDir):
-    emails = CPCR(filesDir, r'.*\.txt', cat_pattern=r'(.*)\.txt')
-    return emails
-
+'''
+Train the chunker with the training data and the NaiveBayesClassifier
+'''
 def train_chunker(filesDir):
-    emails = extract_categories(filesDir)
+    # Create chunked sentences in the CoNLL format.
+    train_sents = conll2000.chunked_sents('train_locations.txt', chunk_types=['Loc'])
 
-    sentences = split_raw_to_sentences(emails.raw())
-
-    tokenized_emails = tokenize_sentences(sentences)
-    train_sents = tag_sentences(tokenized_emails)
-
-    split = int(0.9 * len(train_sents))
-    train_sents = train_sents[0:split]
-    # word is the feature
-    chunker = ConsecutiveNPChunker(train_sents, word, nltk.NaiveBayesClassifier)
+    # Train the chunker with the NaiveBayesClassifier
+    chunker = ConsecutiveNPChunker(train_sents, combine_features, nltk.NaiveBayesClassifier)
 
     return chunker
 
+'''
+Test the chunker and print the accuracy, precision, recall, and F-Measure
+'''
 def test_chunker(filesDir, classifier):
-    emails = extract_categories(filesDir)
-    sentences = split_raw_to_sentences(emails.raw())
+    # Create chunked sentences in the CoNLL format.
+    test_sents = conll2000.chunked_sents('test_locations.txt', chunk_types=['Loc'])
+    print classifier.evaluate(test_sents);
 
-    tokenized_emails = tokenize_sentences(sentences)
-    test_sents = tag_sentences(tokenized_emails)
-
-    split = int(0.9 * len(test_sents))
-    test_sents = test_sents[split:]
-
-    #print nltk.classify.accuracy(classifier, test_sents)
-
-    #for sent in test_sents:
-    print nltk.NEChunkParser.train(test_sents)
-
+'''A simple tagger '''
 def tag_sentences(sentences):
     tagged_emails = []
     
@@ -254,6 +258,7 @@ def tag_sentences(sentences):
 
     return tagged_emails
 
+'''This method is used to tokenize the text into meaningfull tokens.'''
 def tokenize_sentences(sentences):
     pattern = r'''(?x)              # Allow verbose regular expressions
       ([a-zA-Z]\.)+                 # Normal abbreviations
@@ -271,6 +276,8 @@ def tokenize_sentences(sentences):
 
     return results
 
+# We split the raw text into sentences based on new rules, ! and ?-marks.
+# This is the most reliable way without making it too complex.
 def split_raw_to_sentences(raw):
     r = re.compile("(\n|\!|\?)")
     sentences = r.split(raw)
@@ -286,6 +293,7 @@ The O tags are where necessary manually changed to B-Loc and I-Loc.
 def createTaggedFiles(input_directory, output_directory):
     global results
     results = str()
+    # Open the email files to tag and chunk
     filelist = getFilenames(input_directory)
 
     # Loop through all the email files we have
@@ -325,5 +333,13 @@ def getFilenames(input_directory):
 input_dir = "/Users/dirkdewit/Documents/School/Master HTI/Internationaal Semester/Applied Natural Language Processing/Assignments/Chatbot/chatbot/testdata/"
 output_dir = "/Users/dirkdewit/Documents/School/Master HTI/Internationaal Semester/Applied Natural Language Processing/Assignments/Chatbot/chatbot/testdata/tagged/"
 
+'''
+This method is used to create the items (only ran once, now commented out)
+'''
+# createTaggedFiles(input_dir, output_dir)
+
+'''
+The following methods train a chunker and test it on the data.
+'''
 chunker = train_chunker(output_dir)
 test_chunker(input_dir, chunker)
