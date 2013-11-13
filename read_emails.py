@@ -249,6 +249,20 @@ def test_chunker(filesDir, classifier):
     test_sents = conll2000.chunked_sents('test_locations.txt', chunk_types=['Loc'])
     print classifier.evaluate(test_sents);
 
+    text = conll2000.raw('test_data_normal.txt')
+
+    location_list = []
+    sent_tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
+
+    for sent in sent_tokenizer.tokenize(text):
+        for chunk in nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(sent))):
+            if hasattr(chunk, 'node'):
+                if chunk.node == "GPE":
+                    location = ' '.join(c[0] for c in chunk.leaves())
+                    location_list.append(location)
+
+    print location_list
+
 '''A simple tagger '''
 def tag_sentences(sentences):
     tagged_emails = []
